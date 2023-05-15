@@ -1,3 +1,248 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+
+html{
+  scroll-behavior: smooth; /* vai para cada sessão de forma suave*/
+}
+nav{
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    background: linear-gradient(rgba(27, 6, 216, 0.7), transparent);
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li a{
+    text-decoration: none;
+    padding: 5px 0;
+    display: inline-block;
+    margin: 15px 10px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.25 ease-in-out; /* animação que começa rápida, fica lenta e depois fica rápida dnv*/
+}
+
+section{
+    width: 100%;
+    min-height: 100vh;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+section h1{
+    font-size: 80px;
+    color: white;
+}
+
+section:nth-of-type(1){
+    background-color: #0040AD;
+
+    color: white;
+}
+
+section:nth-of-type(2){
+    background-image: url("img/fundo.jpg") ;
+    background-color: #0040AD;
+
+    color: white;
+}
+
+section:nth-of-type(3){
+    background-color: #0040AD;
+
+    color: white;
+}
+
+section:nth-of-type(4){
+    background-color: #0040AD;
+    color: white;
+}
+
+
+.div{
+   height: 71%;
+   width: 71%;
+   position: center; 
+   margin-top: 70px;
+   padding: 5%;
+   padding-top: 0%;
+   text-align: center;
+   background-color: #8592D8;
+   color: white;
+   font-size: 20px;
+   border-radius: 20px;
+}
+
+.container{
+    width: 90%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container .card{
+  position: relative;
+  padding: 10px;
+  width: 20%;
+  background-color: #063777;
+  margin: 20px;
+  border: 5px solid white;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: 0.5s;
+  text-align: center;
+}
+
+.container .card .img{
+  transition: 0.5s;
+}
+
+.container .card h1{
+    font-size: 2.5rem;
+    color: rgb(29, 212, 23);
+}
+
+.container .card .content{
+    text-align: center;
+}
+.container .card .content p{
+    color: white;
+    transition: 0.5s;
+    text-align: center;
+    width: 70%;
+    height: auto
+}
+
+.container .card .content h3{
+    color: white;
+    transition: 0.5s;
+    text-align: center;
+    width: 70%;
+    height: auto
+}
+
+.container .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.5s;
+    outline: none;
+    margin-top: 20px;
+}
+
+.container .card:hover{
+    background-color: #01199e;
+    color: white;
+    margin-top: -30px;
+    box-shadow: 2px 20px 25px #ffffff;
+    border-color: #01199e;
+}
+
+.container .card:hover .content a{
+    color: black;
+    background-color: white;
+}
+
+
+footer{
+    background: #4580E6;
+    text-align: center;
+    color: black;
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.contentt{
+    height: 545px;
+    width: 940px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: flex;
+    margin-top: 25%;
+    margin-left: 50%;
+    transform: translate(-50%, -50%);  
+}
+
+.navigation{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.bar{
+    width: 70px;
+    height: 17px;
+    border: 2px solid blue;
+    margin: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.bar:hover{
+    background-color: white;
+}
+
+.slides{
+    display: flex;
+    width: 500%; /* esse 500 é para fazer a imagem aparecer cad uma de uma vez....  */
+    height:100%;
+}
+
+.slides input{
+        display: none;
+}
+
+.slide{
+    height: 100%;
+    width: 20%;
+    transition: .6s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+}
+
+#slide1:checked ~ .s1{  /* # para id */ 
+   /* esse ~ serve pa dizer#slide3:checked ~ .s1{
+    margin-left: -40%; 
+}que quando o slide estiver checkado, eu quero que o s1(primeira div das imagens)* tenha: */
+  margin-left: 0;
+}
+
+#slide2:checked ~ .s1{
+    margin-left: -20%; 
+}
+
+#slide3:checked ~ .s1{
+    margin-left: -40%; 
+}
+
+#slide4:checked ~ .s1{
+    margin-left: -60%; 
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -20,6 +265,8 @@ nav{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 30px 30px;
     padding: 0 3.5%;
+
+    z-index: 10;
 }
 
 nav ul{
@@ -61,8 +308,4 @@ button{
     text-align: center;
 
     color: #000000;
-}
-
-.espaco{
-    height: 100vh;
 }
